@@ -1,0 +1,34 @@
+
+2019-08-28 01:40:15,108 INFO 1 AWSBeanstalkCfnDeploy.Container - Could not find ElasticBeanstalk/environment section, creating in applicationHost.config
+2019-08-28 01:40:15,374 ERROR 1 AWSBeanstalkCfnDeploy.DeploymentUtils - Exception during deployment.
+Microsoft.Web.Deployment.DeploymentDetailedFatalException: The SQL provider cannot run because of a missing dependency. Please make sure that Microsoft SQL Server Management Objects (Version 10 or higher) is installed.  Learn more at: http://go.microsoft.com/fwlink/?LinkId=221672#ERROR_SMO_NEEDED_FOR_SQL_PROVIDER.
+   at Microsoft.Web.Deployment.SqlReflectionHelper.get_SmoScriptingOptions()
+   at Microsoft.Web.Deployment.SMOHelper.ThrowIfSmoCannotBeLoaded()
+   at Microsoft.Web.Deployment.SqlServerDatabaseProvider.GetAttributes(DeploymentAddAttributeContext addContext)
+   at Microsoft.Web.Deployment.DeploymentObject.EnsureValidAttributes()
+   at Microsoft.Web.Deployment.ManifestProvider.GetAttributes(DeploymentAddAttributeContext addContext)
+   at Microsoft.Web.Deployment.DeploymentObject.EnsureValidAttributes()
+   at Microsoft.Web.Deployment.DeploymentObject.get_IsValid()
+   at Microsoft.Web.Deployment.DeploymentSyncContext.ProcessSync(DeploymentObject destinationObject, DeploymentObject sourceObject)
+   at Microsoft.Web.Deployment.DeploymentObject.SyncToInternal(DeploymentObject destObject, DeploymentSyncOptions syncOptions, PayloadTable payloadTable, ContentRootTable contentRootTable, Nullable`1 syncPassId, String syncSessionId)
+   at Microsoft.Web.Deployment.DeploymentObject.SyncTo(DeploymentProviderOptions providerOptions, DeploymentBaseOptions baseOptions, DeploymentSyncOptions syncOptions)
+   at Microsoft.Web.Deployment.DeploymentObject.SyncTo(String provider, String path, DeploymentBaseOptions baseOptions, DeploymentSyncOptions syncOptions)
+   at AWSBeanstalkCfnDeploy.DeploymentUtils.deployPackage(Container container, Boolean sync) in C:\code\EBDPT-IISCore\src\EBDPT-IISCore\AWSBeanstalkCfnDeploy\DeploymentUtils.cs:line 137
+   at AWSBeanstalkCfnDeploy.DeploymentUtils.UpdateApplicationVersion(Container container, Boolean sync) in C:\code\EBDPT-IISCore\src\EBDPT-IISCore\AWSBeanstalkCfnDeploy\DeploymentUtils.cs:line 56
+2019-08-28 01:40:15,390 ERROR 1 AWSBeanstalkCfnDeploy.DeploymentUtils - Unexpected Exception: System.Exception: Exception during deployment. ---> Microsoft.Web.Deployment.DeploymentDetailedFatalException: The SQL provider cannot run because of a missing dependency. Please make sure that Microsoft SQL Server Management Objects (Version 10 or higher) is installed.  Learn more at: http://go.microsoft.com/fwlink/?LinkId=221672#ERROR_SMO_NEEDED_FOR_SQL_PROVIDER.
+   at Microsoft.Web.Deployment.SqlReflectionHelper.get_SmoScriptingOptions()
+   at Microsoft.Web.Deployment.SMOHelper.ThrowIfSmoCannotBeLoaded()
+   at Microsoft.Web.Deployment.SqlServerDatabaseProvider.GetAttributes(DeploymentAddAttributeContext addContext)
+   at Microsoft.Web.Deployment.DeploymentObject.EnsureValidAttributes()
+   at Microsoft.Web.Deployment.ManifestProvider.GetAttributes(DeploymentAddAttributeContext addContext)
+   at Microsoft.Web.Deployment.DeploymentObject.EnsureValidAttributes()
+   at Microsoft.Web.Deployment.DeploymentObject.get_IsValid()
+   at Microsoft.Web.Deployment.DeploymentSyncContext.ProcessSync(DeploymentObject destinationObject, DeploymentObject sourceObject)
+   at Microsoft.Web.Deployment.DeploymentObject.SyncToInternal(DeploymentObject destObject, DeploymentSyncOptions syncOptions, PayloadTable payloadTable, ContentRootTable contentRootTable, Nullable`1 syncPassId, String syncSessionId)
+   at Microsoft.Web.Deployment.DeploymentObject.SyncTo(DeploymentProviderOptions providerOptions, DeploymentBaseOptions baseOptions, DeploymentSyncOptions syncOptions)
+   at Microsoft.Web.Deployment.DeploymentObject.SyncTo(String provider, String path, DeploymentBaseOptions baseOptions, DeploymentSyncOptions syncOptions)
+   at AWSBeanstalkCfnDeploy.DeploymentUtils.deployPackage(Container container, Boolean sync) in C:\code\EBDPT-IISCore\src\EBDPT-IISCore\AWSBeanstalkCfnDeploy\DeploymentUtils.cs:line 137
+   at AWSBeanstalkCfnDeploy.DeploymentUtils.UpdateApplicationVersion(Container container, Boolean sync) in C:\code\EBDPT-IISCore\src\EBDPT-IISCore\AWSBeanstalkCfnDeploy\DeploymentUtils.cs:line 56
+   --- End of inner exception stack trace ---
+   at AWSBeanstalkCfnDeploy.DeploymentUtils.UpdateApplicationVersion(Container container, Boolean sync) in C:\code\EBDPT-IISCore\src\EBDPT-IISCore\AWSBeanstalkCfnDeploy\DeploymentUtils.cs:line 71
+2019-08-28 01:40:15,390 ERROR 1 AWSBeanstalkCfnDeployApp.DeployApp - Deployment failed: Unexpected Exception
